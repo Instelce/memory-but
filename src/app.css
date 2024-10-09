@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+@layer base {
+	:root {
+		--color-black: 0, 0, 0;
+		--color-gray: 30, 30, 30;
+		--color-blue: 45, 158, 223;
+
+        --radius: 10px;
+	}
+}
