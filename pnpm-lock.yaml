@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      sass:
-        specifier: ^1.79.4
-        version: 1.79.4
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -33,6 +29,9 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.1.2
         version: 3.2.7(prettier@3.3.3)(svelte@4.2.19)
+      sass:
+        specifier: ^1.79.4
+        version: 1.79.4
       svelte:
         specifier: ^4.2.7
         version: 4.2.19

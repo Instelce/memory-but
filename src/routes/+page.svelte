@@ -1,15 +1,15 @@
 <script lang="ts">
 	import Card from '$lib/components/Card.svelte';
 	import type { CardData } from '$lib/types/CardData';
-    import {revealedCount} from "$lib/store/revealed";
+	import { revealedCount } from '$lib/store/revealed';
 
 	let cards: CardData[] = [];
 	for (let index = 0; index < 12; index++) {
 		cards.push({ competence: 'Compétence ' + index, revealed: false });
 	}
 
-    let count = 0;
-    revealedCount.store.subscribe(store => count = store);
+	let count = 0;
+	revealedCount.store.subscribe((store) => (count = store));
 </script>
 
 <p>{count}</p>

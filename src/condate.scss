@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Condate';
+	src: url('fonts/condate/Condate-Inline.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Condate';
+	src:
+		url('fonts/condate/Condate-Light.woff') format('woff'),
+		url('fonts/condate/Condate-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Condate';
+	src:
+		url('fonts/condate/Condate-Medium.woff') format('woff'),
+		url('fonts/condate/Condate-Medium.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}

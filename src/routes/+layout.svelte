@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../condate.scss';
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
