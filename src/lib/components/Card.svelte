@@ -4,8 +4,7 @@
     import {revealedCount} from "$lib/store/revealed";
 
 	export let data: CardData;
-
-	let revealed = false;
+	export let revealed = false;
 
 	let card: HTMLDivElement;
 	let width = 0;
@@ -103,6 +102,7 @@
 		&:hover .diamond {
 			width: calc(var(--i) * 52px);
 			height: calc(var(--i) * 52px);
+			border: 2px solid rgb(var(--color-blue));
 		}
 
 		&:hover .logo {
@@ -140,6 +140,10 @@
 				rgba(var(--color-blue), 0.2) 0%,
 				rgba(var(--color-blue), 0) 100%
 			);
+
+			&:hover {
+				border: 2px solid rgb(var(--color-blue));
+			}
 		}
 
 		.diamond {
@@ -154,7 +158,8 @@
 
 			transition:
 				width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-				height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+				border .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		}
 	}
 </style>

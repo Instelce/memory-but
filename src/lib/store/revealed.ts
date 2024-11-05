@@ -17,6 +17,10 @@ class RevealedCount {
         }
     }
 
+    restore() {
+        this.store.set(0);
+    }
+
     get count(): number {
         return get(this.store);
     }

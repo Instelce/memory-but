@@ -10,14 +10,23 @@
 
 	let count = 0;
 	revealedCount.store.subscribe((store) => (count = store));
+
+	$: count === 2 && (() => {
+		revealedCount.restore();
+	})()
+
+	$: console.log(revealedCount.count);
+	
 </script>
 
 <p>{count}</p>
 
 <div class="w-full h-full flex justify-center items-center">
 	<div class="w-[70%] h-[80%] grid grid-cols-4 gap-4">
-		{#each cards as card}
-			<Card data={card} />
-		{/each}
+		{#key count > 2}
+			{#each cards as card}
+				<Card data={card} revealed={false} />
+			{/each}
+		{/key}
 	</div>
 </div>
