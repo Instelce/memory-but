@@ -27,7 +27,7 @@ export const competences: Competence[] = [
         goal: "Apprendre à installer et configurer un poste informatique et de déployer des servicres dans une architecture réseaue.",
         detail: "Prendre en main l’architecture UNIX, et se servir des commandes bash, avec la gestion des processus d’un ordinateur et la conteneurisation qui permet d’installer un environnement de travail plus rapidement.",
         projects: ["Un module automatisé de création de documentation de code sources en pdf.", "Installation d’un serveur avec base de données et pages web."],
-        tecknologies: ["PHP", "Bash", "HTML", "CSS", "C", "Docker"] 
+        tecknologies: ["PHP", "Bash", "HTML", "CSS", "C", "Docker"]
     },
     {
         name: "Gérer une base de données",
@@ -35,8 +35,8 @@ export const competences: Competence[] = [
         expectations: "Modéliser et créer une base de données, la peupler et l’exploiter.",
         goal: "Apprendre à créer et administrer une base de données réaliste.",
         detail: "Réaliser un diagramme pour modéliser la base, puis la développer avant de l’implanter, la peupler et l’exploiter en faisant des requètes.",
-        projects: "modélisation et implantation d’une base sur le programme du but informatique et création, peuplement, et exploitation des données avec les statistiques des collèges de france",
-        tecknologies: ["PostegreSQL", "UML"] 
+        projects: ["modélisation et implantation d’une base sur le programme du but informatique et création", "peuplement, et exploitation des données avec les statistiques des collèges de france"],
+        tecknologies: ["PostegreSQL", "UML"]
     },
     {
         name: "Conduire un projet",
@@ -44,8 +44,8 @@ export const competences: Competence[] = [
         expectations: "Lancer un nouveau projet, piloter le maintien d’un projet, faire évoluer un système d’information.",
         goal: "Apprendre à gérer et organiser efficacement un projet informatique.",
         detail: "Appréhender les besoins du client et de l’utilisateur, mettre en place des outils de gestion de projet, communiquer efficacement avec les différents acteurs d’un projet.",
-        projects: "Site internet de streaming en HTML/CSS",
-        tecknologies: ["CSS", "HTML", "JavaScript"] 
+        projects: ["Site internet de streaming en HTML/CSS"],
+        tecknologies: ["CSS", "HTML", "JavaScript"]
     },
     {
         name: "Travailler dans une équipe",
@@ -54,6 +54,6 @@ export const competences: Competence[] = [
         goal: "Renforcer nos qualités humaines, permet d’intégrer ou d’organiser une équipe informatique saine et efficace.",
         detail: "Etre capable de s’intégrer efficacement au sein du milieu professionnel.",
         projects: ["Etudes des engagements RSE d’une entreprise", "Réalisation d’un évenement de team building avec film promotionnel"],
-        tecknologies: ["Canva", "GitHub", "Teams"] 
+        tecknologies: ["Canva", "GitHub", "Teams"]
     }
 ]
