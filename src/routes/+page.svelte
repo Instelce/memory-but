@@ -84,9 +84,9 @@
 
 	// Settings
 	$effect(() => {
-		if (gameSettings.fullscreen) {
+		if (gameSettings.fullscreen && document.fullscreenEnabled) {
 			document.documentElement.requestFullscreen();
-		} else {
+		} else if (document.fullscreenElement) {
 			document.exitFullscreen();
 		}
 

@@ -12,7 +12,8 @@
 			<button class="button" onclick={() => gameData.gameStarted = true}
 				><span>Start a game</span></button
 			>
-			<button class="button gray" onclick={() => gameData.screen = "about"}><span>About</span></button>
+			<!-- onclick={() => gameData.screen = "about"} -->
+			<button class="button gray"><span>About</span></button>
 		</div>
 	</div>
 {/if}
