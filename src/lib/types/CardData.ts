@@ -1,5 +1,8 @@
+import type { Competence } from "./Competence";
 
 export type CardData = {
-    competence: string;
+    data: string,
+    competence: Competence,
+    isTechno: boolean,
     revealed: boolean;
 }

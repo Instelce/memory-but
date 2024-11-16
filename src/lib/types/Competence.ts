@@ -1,10 +1,14 @@
 
 export type Competence = {
+    number: number,
     name: string,
-    number: string,
+    detail: string,
+    fields: CompetenceFields
+}
+
+export type CompetenceFields = {
     expectations: string,
     goal: string,
-    detail: string,
     projects: string[],
-    tecknologies: string[]
+    technologies: string[]
 }
