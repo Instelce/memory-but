@@ -18,6 +18,7 @@
 
 	let count = $derived(revealedCount.count);
 	let doReset = $derived(revealedCount.count === 2 || !gameData.gameStarted);
+	let firstPlay = $state(true);
 
 	$inspect(gameData.competenceFinded, gameData.cardRevealedCompetence);
 
@@ -50,34 +51,55 @@
 				gameData.cardRevealedCompetence = [];
 
 				// Load card data
-				cards = [];
+				setTimeout(
+					() => {
+						cards = [];
+					},
+					firstPlay ? 0 : 800
+				);
 
-				// 1. For each competence
-				for (let competence of competences) {
-					// 2. Add a card which contains the name of the competence
-					cards.push({ data: competence.name, competence, revealed: false, isTechno: false });
+				setTimeout(
+					() => {
+						// 1. For each competence
+						for (let competence of competences) {
+							// 2. Add a card which contains the name of the competence
+							cards.push({ data: competence.name, competence, revealed: false, isTechno: false });
 
-					// 3. Add a card which contains a random field of the competence
-					let field: keyof CompetenceFields = Object.keys(competence.fields)[
-						randomNumber(0, Object.keys(competence.fields).length - 1)
-					] as keyof CompetenceFields;
+							// 3. Add a card which contains a random field of the competence
+							let field: keyof CompetenceFields = Object.keys(competence.fields)[
+								randomNumber(0, Object.keys(competence.fields).length - 1)
+							] as keyof CompetenceFields;
 
-					let isTechno = field === 'technologies';
+							let isTechno = field === 'technologies';
 
-					if (typeof competence.fields[field] === 'string') {
-						cards.push({ data: competence.fields[field], competence, revealed: false, isTechno });
-					} else {
-						cards.push({
-							data: competence.fields[field][randomNumber(0, competence.fields[field].length - 1)],
-							competence,
-							revealed: false,
-							isTechno
-						});
-					}
-				}
+							if (typeof competence.fields[field] === 'string') {
+								cards.push({
+									data: competence.fields[field],
+									competence,
+									revealed: false,
+									isTechno
+								});
+							} else {
+								cards.push({
+									data: competence.fields[field][
+										randomNumber(0, competence.fields[field].length - 1)
+									],
+									competence,
+									revealed: false,
+									isTechno
+								});
+							}
+						}
 
-				// 4. Shuffle the cards
-				cards = cards.sort(() => Math.random() - 0.5);
+						// 4. Shuffle the cards
+						cards = cards.sort(() => Math.random() - 0.5);
+					},
+					firstPlay ? 0 : 1800
+				);
+
+				setTimeout(() => {
+					firstPlay = false;
+				}, 2000);
 			});
 		}
 	});
@@ -111,7 +133,10 @@
 	>
 		{#key cards}
 			{#each cards as card, i (i)}
-				<div in:fly|global={{ x: 700, duration: 500 + 20 * i, easing: cubicOut }}>
+				<div
+					in:fly|global={{ y: 700, duration: 500 + 50 * i }}
+					out:fly|global={{ y: -700, duration: 500 + 50 * i, delay: 10 * i }}
+				>
 					<Card
 						data={card}
 						revealed={false}
