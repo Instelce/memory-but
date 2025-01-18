@@ -15,6 +15,8 @@
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
 	import MenuBackButton from '$lib/components/MenuBackButton.svelte';
 	import Settings from '$lib/menus/Settings.svelte';
+	import Timer from '$lib/components/Timer.svelte';
+	import CountDown from '$lib/components/CountDown.svelte';
 
 	let count = $derived(revealedCount.count);
 	let doReset = $derived(revealedCount.count === 2 || !gameData.gameStarted);
@@ -124,6 +126,11 @@
 
 <MainMenu />
 <Settings />
+
+{#if gameData.gameStarted && gameSettings.speedrun}
+	<CountDown></CountDown>
+	<Timer start = {true}></Timer>
+{/if}
 
 <!-- Cards -->
 <div class="w-full h-full flex justify-center items-center overflow-hidden z-10">
