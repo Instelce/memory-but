@@ -15,12 +15,9 @@
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
 	import MenuBackButton from '$lib/components/MenuBackButton.svelte';
 	import Settings from '$lib/menus/Settings.svelte';
-<<<<<<< Updated upstream
 	import Timer from '$lib/components/Timer.svelte';
 	import CountDown from '$lib/components/CountDown.svelte';
-=======
 	import { sounds } from '$lib/audio';
->>>>>>> Stashed changes
 
 	let showRules = true; // Initialement, les règles sont affichées	
 	let count = $derived(revealedCount.count);
@@ -133,13 +130,10 @@
 <MainMenu />
 <Settings />
 
-<<<<<<< Updated upstream
 {#if gameData.gameStarted && gameSettings.speedrun}
 	<CountDown></CountDown>
 	<Timer start = {true}></Timer>
 {/if}
-=======
->>>>>>> Stashed changes
 
 <!-- Cards -->
 <div class="w-full h-full flex justify-center items-center overflow-hidden z-10">
