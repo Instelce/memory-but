@@ -4,10 +4,11 @@
 	import type { CardData } from '$lib/types/CardData';
 	import { randomNumber } from '$lib/utils';
 	import { revealedCount } from '$lib/stores/revealed.svelte';
-	import { getCompetenceColor } from '../../routes/data';
+	import { getCompetenceColor } from '../../routes/data_old';
 	import { gameData } from '$lib/stores/gameData.svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
+	import { sounds } from '$lib/audio';
 
 	interface Props {
 		data: CardData;
@@ -73,6 +74,7 @@
 			revealed = !revealed;
 			internalCanFlip = false;
 			revealedCount.inc();
+			sounds.cardFlip.play();
 
 			gameData.cardRevealedCompetence.push(data.competence.number);
 		}

@@ -3,7 +3,12 @@
 	import { sequence } from '@sveltejs/kit/hooks';
 	import { fade, fly } from 'svelte/transition';
 	import Settings from './Settings.svelte';
+	import Rules from '$lib/rules.svelte'; 
 </script>
+
+	<div class="rules-overlay" in:fade out:fade>
+        <Rules />
+    </div>
 
 {#if !gameData.gameStarted && gameData.screen === "menu"}
 	<div class="menu-container" in:fly={{ x: -100 }} out:fly={{ x: -200 }}>

@@ -1,6 +1,7 @@
 import type { Competence } from "$lib/types/Competence";
 
 class GameData {
+    rulesVisible = $state(true);
     gameStarted = $state(false);
     gameEnded = $state(false);
 

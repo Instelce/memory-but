@@ -6,7 +6,7 @@
 	import MainMenu from '$lib/menus/Main.svelte';
 	import { gameData } from '$lib/stores/gameData.svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { competences } from './data';
+	import { competences } from './data_old';
 	import { randomNumber } from '$lib/utils';
 	import type { Competence, CompetenceFields } from '$lib/types/Competence';
 	import Background from '$lib/components/Background.svelte';
@@ -15,9 +15,14 @@
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
 	import MenuBackButton from '$lib/components/MenuBackButton.svelte';
 	import Settings from '$lib/menus/Settings.svelte';
+<<<<<<< Updated upstream
 	import Timer from '$lib/components/Timer.svelte';
 	import CountDown from '$lib/components/CountDown.svelte';
+=======
+	import { sounds } from '$lib/audio';
+>>>>>>> Stashed changes
 
+	let showRules = true; // Initialement, les règles sont affichées	
 	let count = $derived(revealedCount.count);
 	let doReset = $derived(revealedCount.count === 2 || !gameData.gameStarted);
 	let firstPlay = $state(true);
@@ -31,6 +36,7 @@
 				// Check if a competence is find
 				if (gameData.cardRevealedCompetence[0] === gameData.cardRevealedCompetence[1]) {
 					gameData.competenceFinded.push(gameData.cardRevealedCompetence[0]);
+					sounds.success.play();
 				}
 
 				// Wait 2 seconds and reset the cards
@@ -127,10 +133,13 @@
 <MainMenu />
 <Settings />
 
+<<<<<<< Updated upstream
 {#if gameData.gameStarted && gameSettings.speedrun}
 	<CountDown></CountDown>
 	<Timer start = {true}></Timer>
 {/if}
+=======
+>>>>>>> Stashed changes
 
 <!-- Cards -->
 <div class="w-full h-full flex justify-center items-center overflow-hidden z-10">
