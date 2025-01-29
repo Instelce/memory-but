@@ -15,29 +15,26 @@
 				interval = setInterval(() => {
 					time++;
 				}, 1000);
-			}, 3000);
+			}, 4200);
 		}
 	})	
 
 </script>
-<div class="container">
-	<div class="chronometer">
-		{formatTime(time)}
-	</div>
+
+<div class="chronometer">
+	{formatTime(time)}
 </div>
 
 <style lang="scss">
-	.container{
-		position: relative;
-		bottom: 20px;
-		right: 20px;
-	}
-
 	.chronometer {
-		font-family: "Mogra", system-ui;
+		top: 1.5rem;
+		right: 2rem;
+		position: absolute;
+		font-family: "Condate", system-ui;
 		font-weight: 200;
 		font-style: normal;
 		font-size: 3rem;
 		margin: 1rem 0;
+		z-index: 2;
 	}
 </style>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import type { CardData } from '$lib/types/CardData';
 	import { randomNumber } from '$lib/utils';
 	import { revealedCount } from '$lib/stores/revealed.svelte';
@@ -9,6 +7,7 @@
 	import { fade, fly } from 'svelte/transition';
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
 	import { sounds } from '$lib/audio';
+	import { Confetti } from 'svelte-confetti';
 
 	interface Props {
 		data: CardData;
@@ -27,11 +26,11 @@
 	let internalCanFlip = $state(true);
 	let isFind = $derived(gameData.competenceFind(data.competence));
 
-	$inspect(isFind).with(() => {
-		if (isFind) {
-			console.log('isFind', isFind);
-		}
-	});
+	// $inspect(isFind).with(() => {
+	// 	if (isFind) {
+	// 		console.log('isFind', isFind);
+	// 	}
+	// });
 
 	let diamonds = Array.from(Array(10).keys());
 	let rotation = $derived(revealed ? randomNumber(0.5, 1) : randomNumber(0.5, 1));
@@ -112,12 +111,12 @@
 			<!-- Card content -->
 			<div class="card-front" transition:flip={{ duration: gameSettings.flipDuration }}>
 				<div class="card-design" style:--color={getCompetenceColor(data.competence)}>
-					<p>{data.data}</p>
+					<p>{data.content}</p>
 				</div>
 			</div>
 		{:else}
 			<div class="card-back" transition:flip={{ duration: gameSettings.flipDuration }}>
-				<!-- <p>{data.competence.number}</p> -->
+				<!-- {data.competence.number} -->
 				<div class="card-design">
 					<!-- <img class="logo" src="logo-info.png" alt="" /> -->
 					{#each diamonds as i}
@@ -127,6 +126,12 @@
 			</div>
 		{/if}
 	</div>
+
+	{#if revealed && isFind}
+		<div class="confetti">
+			<Confetti fallDistance="50px" x={[-1, 1]} y={[-1, 1]} delay={[0, 100]} duration={1000} />
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -135,6 +140,12 @@
 		height: 100%;
 		position: relative;
 		transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+		&.find {
+			.card-front .card-design {
+				border: 1px solid var(--color) !important;
+			}
+		}
 	}
 
 	.card {
@@ -163,6 +174,10 @@
 
 		&.find {
 			animation: is-finded 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+			.card-front .card-design {
+				border: 1px solid var(--color) !important;
+			}
 		}
 	}
 
@@ -187,7 +202,8 @@
 			height: 100%;
 			padding: 1rem;
 
-			border: 1px solid var(--color);
+			border: 1px solid transparent;
+			// border: 1px solid var(--color) !important;
 			border-radius: var(--radius);
 
 			display: flex;
@@ -249,5 +265,12 @@
 		100% {
 			transform: scale(1);
 		}
+	}
+
+	.confetti {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>

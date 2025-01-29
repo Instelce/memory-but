@@ -18,8 +18,10 @@
 	import Timer from '$lib/components/Timer.svelte';
 	import CountDown from '$lib/components/CountDown.svelte';
 	import { sounds } from '$lib/audio';
+	import About from '$lib/menus/About.svelte';
+	import End from '$lib/menus/End.svelte';
 
-	let showRules = true; // Initialement, les règles sont affichées	
+	let showRules = true; // Initialement, les règles sont affichées
 	let count = $derived(revealedCount.count);
 	let doReset = $derived(revealedCount.count === 2 || !gameData.gameStarted);
 	let firstPlay = $state(true);
@@ -68,30 +70,25 @@
 						// 1. For each competence
 						for (let competence of competences) {
 							// 2. Add a card which contains the name of the competence
-							cards.push({ data: competence.name, competence, revealed: false, isTechno: false });
+							cards.push({ content: competence.name, competence, revealed: false });
 
 							// 3. Add a card which contains a random field of the competence
 							let field: keyof CompetenceFields = Object.keys(competence.fields)[
 								randomNumber(0, Object.keys(competence.fields).length - 1)
 							] as keyof CompetenceFields;
 
-							let isTechno = field === 'technologies';
-
 							if (typeof competence.fields[field] === 'string') {
 								cards.push({
-									data: competence.fields[field],
+									content: competence.fields[field],
 									competence,
-									revealed: false,
-									isTechno
+									revealed: false
 								});
 							} else {
 								cards.push({
-									data: competence.fields[field][
-										randomNumber(0, competence.fields[field].length - 1)
-									],
+									content:
+										competence.fields[field][randomNumber(0, competence.fields[field].length - 1)],
 									competence,
-									revealed: false,
-									isTechno
+									revealed: false
 								});
 							}
 						}
@@ -129,10 +126,12 @@
 
 <MainMenu />
 <Settings />
+<About />
+<End />
 
 {#if gameData.gameStarted && gameSettings.speedrun}
 	<CountDown></CountDown>
-	<Timer start = {true}></Timer>
+	<Timer start={true}></Timer>
 {/if}
 
 <!-- Cards -->
@@ -163,7 +162,11 @@
 	<MenuBackButton onclick={() => (gameData.gameStarted = false)}>Menu</MenuBackButton>
 {/if}
 
-<!-- <Background /> -->
+<Background />
+
+<div class="mobile">
+	<p>Le jeu n'est disponible que sur ordi.</p>
+</div>
 
 <style lang="scss">
 	.card-container {
@@ -172,5 +175,29 @@
 
 	.slide {
 		transform: translateX(30%);
+	}
+
+	.mobile {
+		width: 100%;
+		height: 100dvh;
+		background: #000;
+		z-index: 100000;
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.mobile {
+			display: flex;
+		}
+
+		body {
+			height: 100vh;
+			overflow: hidden;
+		}
 	}
 </style>

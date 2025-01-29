@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { gameData } from '$lib/stores/gameData.svelte';
-	import { sequence } from '@sveltejs/kit/hooks';
 	import { fade, fly } from 'svelte/transition';
-	import Settings from './Settings.svelte';
-	import Rules from '$lib/rules.svelte'; 
+	import Rules from './Rules.svelte';
 </script>
 
-	<div class="rules-overlay" in:fade out:fade>
-        <Rules />
-    </div>
+<div class="rules-overlay" in:fade out:fade>
+	<Rules />
+</div>
 
 {#if !gameData.gameStarted && gameData.screen === "menu"}
 	<div class="menu-container" in:fly={{ x: -100 }} out:fly={{ x: -200 }}>
@@ -18,7 +16,7 @@
 				><span>Start a game</span></button
 			>
 			<!-- onclick={() => gameData.screen = "about"} -->
-			<button class="button gray"><span>About</span></button>
+			<button class="button gray" onclick={() => gameData.screen = "about"}><span>About</span></button>
 		</div>
 	</div>
 {/if}

@@ -8,7 +8,7 @@ class GameData {
     cardRevealedCompetence: number[] = $state([]);
     competenceFinded: number[] = $state([]);
 
-    screen = $state("menu");
+    screen: 'menu' | 'settings' | 'about' = $state("menu");
 
     competenceFind(competence: Competence): boolean {
         return this.competenceFinded.includes(competence.number);
