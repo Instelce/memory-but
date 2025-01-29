@@ -8,7 +8,7 @@
 {#if gameData.screen === 'about'}
 	<div class="menu-container" in:fly={{ x: -100, delay: 300 }} out:fly={{ x: -200 }}>
 		<div class="wrapper">
-			<H1>About us</H1>
+			<H1>A propos</H1>
 
 			<div class="contributor">
 				<img src="/about/celestin-besson.jpg" alt="Célestin Besson" />

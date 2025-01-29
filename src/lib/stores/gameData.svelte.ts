@@ -6,12 +6,20 @@ class GameData {
     gameEnded = $state(false);
 
     cardRevealedCompetence: number[] = $state([]);
-    competenceFinded: number[] = $state([]);
+    competenceFinded: Competence[] = $state([]);
 
     screen: 'menu' | 'settings' | 'about' = $state("menu");
 
     competenceFind(competence: Competence): boolean {
-        return this.competenceFinded.includes(competence.number);
+        let founded = false;
+
+        this.competenceFinded.forEach((comp) => {
+            if (comp.number === competence.number) {
+                founded = true;
+            }
+        });
+
+        return founded;
     }
 }
 

@@ -3,7 +3,7 @@
 	import { tick } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 
-	let countdown: number = $state(4);
+	let countdown: number = $state(3);
 	let containerHidden: boolean = $state(false);
 
 	async function startCountdown(): Promise<void> {
@@ -25,7 +25,7 @@
 		{#if countdown == 0}
 			<p>GO!</p>
 		{:else}
-			<p>{countdown - 1}</p>
+			<p>{countdown}</p>
 		{/if}
     </div>
 {/if}

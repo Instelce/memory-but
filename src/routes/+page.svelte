@@ -20,11 +20,15 @@
 	import { sounds } from '$lib/audio';
 	import About from '$lib/menus/About.svelte';
 	import End from '$lib/menus/End.svelte';
+	import { getCompetence, getCompetenceColor } from './data';
+	import H1 from '$lib/components/ui/heading/h1.svelte';
 
 	let showRules = true; // Initialement, les règles sont affichées
 	let count = $derived(revealedCount.count);
 	let doReset = $derived(revealedCount.count === 2 || !gameData.gameStarted);
 	let firstPlay = $state(true);
+	let moreCompetenceInfo: Competence | null = $state(null);
+	let pauseTimer = $state(false);
 
 	$inspect(gameData.competenceFinded, gameData.cardRevealedCompetence);
 
@@ -34,7 +38,7 @@
 			untrack(() => {
 				// Check if a competence is find
 				if (gameData.cardRevealedCompetence[0] === gameData.cardRevealedCompetence[1]) {
-					gameData.competenceFinded.push(gameData.cardRevealedCompetence[0]);
+					gameData.competenceFinded.push(getCompetence(gameData.cardRevealedCompetence[0]));
 					sounds.success.play();
 				}
 
@@ -56,6 +60,7 @@
 				// Reset game state
 				gameData.competenceFinded = [];
 				gameData.cardRevealedCompetence = [];
+				moreCompetenceInfo = null;
 
 				// Load card data
 				setTimeout(
@@ -129,16 +134,94 @@
 <About />
 <End />
 
+{#if gameData.gameStarted}
+	<div class="more-informations-buttons">
+		{#each gameData.competenceFinded as competence (competence.number)}
+			<div in:fly|global={{ x: 200 }}>
+				<Button
+					size="default"
+					style="background: {getCompetenceColor(competence)};"
+					onclick={() => {
+						moreCompetenceInfo = competence;
+						pauseTimer = true;
+					}}>{competence.number}</Button
+				>
+			</div>
+		{/each}
+
+		{#if gameData.competenceFinded.length > 0}
+			<p in:fade={{delay: 200}}>Plus d'info</p>
+		{/if}
+	</div>
+{/if}
+
 {#if gameData.gameStarted && gameSettings.speedrun}
 	<CountDown></CountDown>
-	<Timer start={true}></Timer>
+	<Timer start={true} bind:pause={pauseTimer} show={moreCompetenceInfo == null}></Timer>
 {/if}
 
 <!-- Cards -->
 <div class="w-full h-full flex justify-center items-center overflow-hidden z-10">
+	{#if moreCompetenceInfo}
+		<div class="hide-cards">
+			<Button
+				onclick={() => {
+					moreCompetenceInfo = null;
+					pauseTimer = false;
+				}}
+			>
+				Revenir au jeu
+			</Button>
+		</div>
+		<div class="more-informations text-lg" in:fly={{ x: '80%' }}>
+			<H1>{moreCompetenceInfo.name}</H1>
+
+			<div class="mb-6">
+				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Detail</h2>
+				<p>{moreCompetenceInfo.detail}</p>
+			</div>
+
+			<div class="mb-6">
+				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Objectif</h2>
+				<p>{moreCompetenceInfo.fields.goal}</p>
+			</div>
+
+			<div class="mb-6">
+				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Technologies</h2>
+				<ul class="list-disc">
+					{#each moreCompetenceInfo.technologies as tech}
+						<li>
+							{tech}
+							<!-- <img src="https://skillicons.dev/icons?i={tech}" alt="{tech}"> -->
+						</li>
+					{/each}
+				</ul>
+			</div>
+
+			<div class="mb-6">
+				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Attentes</h2>
+				<ul class="list-disc">
+					{#each moreCompetenceInfo.fields.expectations as expectation}
+						<li>{expectation}</li>
+					{/each}
+				</ul>
+			</div>
+
+			<div class="mb-6">
+				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Projets</h2>
+				<ul class="list-disc">
+					{#each moreCompetenceInfo.fields.projects as project}
+						<li>{project}</li>
+					{/each}
+				</ul>
+			</div>
+		</div>
+	{/if}
+
 	<div
 		class="card-container w-[70%] h-[90%] grid grid-cols-4 gap-4 z-10"
 		class:slide={!gameData.gameStarted}
+		class:slide-more={moreCompetenceInfo != null}
 	>
 		{#key cards}
 			{#each cards as card, i (i)}
@@ -162,7 +245,11 @@
 	<MenuBackButton onclick={() => (gameData.gameStarted = false)}>Menu</MenuBackButton>
 {/if}
 
-<Background />
+{#if !moreCompetenceInfo}
+	<div transition:fade>
+		<Background />
+	</div>
+{/if}
 
 <div class="mobile">
 	<p>Le jeu n'est disponible que sur ordi.</p>
@@ -175,6 +262,75 @@
 
 	.slide {
 		transform: translateX(30%);
+	}
+
+	.slide-more {
+		transform: translateX(-80%);
+	}
+
+	.more-informations {
+		width: 60%;
+		height: 90%;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		padding-right: 10%;
+	}
+	.hide-cards {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40%;
+		height: 100%;
+		z-index: 25;
+		padding-right: 10%;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		// Linear Gradient
+		background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+	}
+
+	.more-informations-buttons {
+		position: absolute;
+		right: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
+		max-width: 4rem;
+
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+
+		z-index: 10;
+
+		p {
+			white-space: nowrap;
+			font-family: 'Condate', sans-serif;
+			display: inline-block;
+			// Rotate letters
+			transform: rotate(-90deg);
+			padding-top: 0.45rem;
+			margin-top: 3rem;
+			opacity: 0.8;
+		}
+		p::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 1rem;
+			height: 1.5px;
+			right: 0;
+			top: 50%;
+			transform: translate(140%, -50%);
+			background: #fff;
+			margin-top: 0.1rem;
+		}
 	}
 
 	.mobile {

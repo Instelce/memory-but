@@ -69,7 +69,7 @@
 	}
 
 	function handleClick() {
-		if (canFlip && internalCanFlip && !gameData.competenceFinded.includes(data.competence.number)) {
+		if (canFlip && internalCanFlip && !gameData.competenceFinded.includes(data.competence)) {
 			revealed = !revealed;
 			internalCanFlip = false;
 			revealedCount.inc();

@@ -11,12 +11,12 @@
 {#if !gameData.gameStarted && gameData.screen === "menu"}
 	<div class="menu-container" in:fly={{ x: -100 }} out:fly={{ x: -200 }}>
 		<div class="menu-buttons">
-			<button class="button gray" onclick={() => gameData.screen = "settings"}><span>Settings</span></button>
+			<button class="button gray" onclick={() => gameData.screen = "settings"}><span>Paramètres</span></button>
 			<button class="button" onclick={() => gameData.gameStarted = true}
-				><span>Start a game</span></button
+				><span>Jouer</span></button
 			>
 			<!-- onclick={() => gameData.screen = "about"} -->
-			<button class="button gray" onclick={() => gameData.screen = "about"}><span>About</span></button>
+			<button class="button gray" onclick={() => gameData.screen = "about"}><span>A propos</span></button>
 		</div>
 	</div>
 {/if}

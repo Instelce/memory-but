@@ -11,7 +11,7 @@
 {#if gameData.screen === 'settings'}
 	<div class="settings-container" in:fly={{ x: -100, delay: 300 }} out:fly={{ x: -200 }}>
 		<div class="settings-wrapper">
-			<H1>Settings</H1>
+			<H1>Paramètres</H1>
             <div class="flex flex-col gap-3">
                 <div class="flex items-center space-x-2">
                     <Switch id="fullscreen" bind:checked={gameSettings.fullscreen}/>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <Switch id="sound" bind:checked={gameSettings.sound} />
-                    <Label for="sound">Sound</Label>
+                    <Label for="sound">Son</Label>
                 </div>
                 <div class="flex items-center space-x-2">
                     <Switch id="speedrun" bind:checked={gameSettings.speedrun} />

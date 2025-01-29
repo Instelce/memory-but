@@ -8,7 +8,7 @@ export const competences: Competence[] = [
         detail: "Réaliser et implémenter des conceptions simples et efficaces qui respectent les principes d’accessibilité et d’ergonomie et les tester pour valider leur qualité.",
         technologies: ["C", "CSS", "HTML", "Java", "JavaScript", "PHP"],
         fields: {
-            expectations: ["Créer une application", "faire évoluer une application", "maintenir une application"],
+            expectations: ["Créer une application", "Faire évoluer une application", "Maintenir une application"],
             goal: "Apprendre à réaliser efficacement une application informatique en équipe",
             projects: ["Sudoku en langage C", "Application de gestion d’une salle de spectacle"],
         }
@@ -88,6 +88,6 @@ export function getCompetenceColor(competence: Competence) {
     }
 }
 
-export function getCompetence(number: 1 | 2 | 3 | 4 | 5 | 6): Competence {
+export function getCompetence(number: number): Competence {
     return competences.find(competence => competence.number === number) as Competence;
 }
