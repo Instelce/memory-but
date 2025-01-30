@@ -21,7 +21,7 @@ export const competences: Competence[] = [
         fields: {
             expectations: ["Améliorer les performances des programmes", "Limiter l’impact environnemental d’une application", "Mettre en place des applications adaptées et efficaces"],
             goal: "Apprendre à optimiser n’importe quel critère d’une application informatique.",
-            projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise le problème du cavalier"],
+            projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise un problème mathématiques"],
         }
     },
     {
@@ -32,7 +32,7 @@ export const competences: Competence[] = [
         fields: {
             expectations: ["Déployer une architecture technique", "Améliorer une interface existante", "Sécuriser les applications et les services"],
             goal: "Installer et configurer un poste informatique et de déployer des servicres dans une architecture réseaue.",
-            projects: ["Générateur de documentation de code sources en pdf avec Docker", "Installation d’un serveur avec base de données et pages web."],
+            projects: ["Générateur de documentation de code en PDF", "Installation d’un serveur(BDD et pages web)"],
         }
     },
     {
@@ -43,18 +43,18 @@ export const competences: Competence[] = [
         fields: {
             expectations: ["Modéliser et créer une base de données", "Peupler et exploiter une base de données"],
             goal: "Apprendre à créer et administrer une base de données réaliste.",
-            projects: ["Modélisation et implantation d’une base de données", "Peuplement et exploitation des données avec des statistiques"],
+            projects: ["Modélisation d’une base de données", "Peuplement et exploitation des données", "Statistiques sur une base de données"],
         }
     },
     {
         name: "Conduire un projet",
         number: 5,
         detail: "Appréhender les besoins du client et de l’utilisateur, mettre en place des outils de gestion de projet, communiquer efficacement avec les différents acteurs d’un projet.",
-        technologies: ["CSS", "HTML", "JavaScript"],
+        technologies: ["JIRA", "SCRUM", "methodologie agile"],
         fields: {
             expectations: ["Lancer un nouveau projet" ,"Piloter le maintien d’un projet", "Faire évoluer un système d’information"],
             goal: "Gérer et organiser efficacement un projet informatique.",
-            projects: ["Site internet de streaming en HTML/CSS"],
+            projects: ["Mise en place d'un environnement pour le suivi d'un projet"],
         }
     },
     {
