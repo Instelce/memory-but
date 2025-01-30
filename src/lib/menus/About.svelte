@@ -29,7 +29,7 @@
 				</div>
 
 				<div class="contributor">
-					<img src="/about/stephane-antoine.jpg" alt="" />
+					<img src="/about/stephane-antoine.jpeg" alt="" />
 					<div>
 						<h3>Stéphane Antoine</h3>
 						<div class="flex gap-2">
