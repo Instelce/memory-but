@@ -31,7 +31,7 @@ export const competences: Competence[] = [
         technologies: ["Docker", "Bash", "PHP"],
         fields: {
             expectations: ["Déployer une architecture technique", "Améliorer une interface existante", "Sécuriser les applications et les services"],
-            goal: "Installer et configurer un poste informatique et de déployer des servicres dans une architecture réseaue.",
+            goal: "Installer et configurer un poste informatique et de déployer des services dans une architecture réseau.",
             projects: ["Générateur de documentation de code en PDF", "Installation d’un serveur(BDD et pages web)"],
         }
     },

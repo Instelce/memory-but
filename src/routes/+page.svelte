@@ -125,8 +125,8 @@
 			gameSettings.flipCooldown = 500;
 			gameSettings.flipDuration = 200;
 		} else {
-			gameSettings.flipCooldown = 1500;
-			gameSettings.flipDuration = 800;
+			gameSettings.flipCooldown = 2500;
+			gameSettings.flipDuration = 400;
 		}
 	});
 </script>

@@ -1,7 +1,7 @@
 
 class GameSettings {
-    flipCooldown = 1500; //1500 de base
-    flipDuration = 800;
+    flipCooldown = 2500; //1500 de base
+    flipDuration = 400;
 
     sound = $state(true);
     fullscreen = $state(false);
