@@ -30,7 +30,7 @@
 	let moreCompetenceInfo: Competence | null = $state(null);
 	let pauseTimer = $state(false);
 
-	$inspect(gameData.competenceFinded, gameData.cardRevealedCompetence);
+	// $inspect(gameData.competenceFinded, gameData.cardRevealedCompetence);
 
 	// When two cards are revealed
 	$effect(() => {
@@ -102,6 +102,16 @@
 
 						// 4. Shuffle the cards
 						cards = cards.sort(() => Math.random() - 0.5);
+
+						// Console log the cards in a grid 
+						console.log("Bien vu ! Voici toutes les réponses :)");
+						cards.forEach((card, i) => {
+							if (i % 4 === 0) {
+								console.log(
+									`${cards[i].competence.number} ${cards[i + 1].competence.number} ${cards[i + 2].competence.number} ${cards[i + 3].competence.number}`,
+								);
+							}
+						});
 					},
 					firstPlay ? 0 : 1800
 				);
@@ -112,6 +122,12 @@
 			});
 		}
 	});
+
+	$effect(() => {
+		if (gameData.competenceFinded.length === competences.length) {
+			sounds.endSuccess.play();
+		}
+	})
 
 	// Settings
 	$effect(() => {
@@ -125,7 +141,7 @@
 			gameSettings.flipCooldown = 500;
 			gameSettings.flipDuration = 200;
 		} else {
-			gameSettings.flipCooldown = 2500;
+			gameSettings.flipCooldown = 2200;
 			gameSettings.flipDuration = 400;
 		}
 	});
@@ -185,7 +201,7 @@
 
 			<div class="mb-6">
 				<h2 class="uppercase font-semibold mb-1 text-xs opacity-100 text-primary">Objectif</h2>
-				<p>{moreCompetenceInfo.fields.goal}</p>
+				<p>{moreCompetenceInfo.goal}</p>
 			</div>
 
 			<div class="mb-6">
@@ -310,7 +326,7 @@
 		flex-direction: column;
 		gap: 1rem;
 
-		z-index: 22;
+		z-index: 20;
 
 		p {
 			white-space: nowrap;

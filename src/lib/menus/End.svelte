@@ -25,8 +25,7 @@
 		<H1 class="pb-2">Bravo !</H1>
 		<h2 class="font-condate text-center text-lg mb-4">Vous avez trouvé toutes les compétences !</h2>
 		<p>
-			Vous pouvez recommencer une partie, et n'hésitez pas à allez dans les <strong class="text-primary">paramètres</strong> pour changer
-			le niveau de difficulté.
+			Vous pouvez recommencer une partie. N'hésitez pas à allez dans les <strong class="text-primary">paramètres</strong> pour changer le mode de jeu.
 		</p>
 		<Button onclick={() => gameData.gameStarted = false}>Revenir à l'acceuil</Button>
 	</div>

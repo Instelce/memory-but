@@ -7,9 +7,9 @@ export const competences: Competence[] = [
         number: 1,
         detail: "Réaliser et implémenter des conceptions simples et efficaces qui respectent les principes d’accessibilité et d’ergonomie et les tester pour valider leur qualité.",
         technologies: ["C", "CSS", "HTML", "Java", "JavaScript", "PHP"],
+        goal: "Apprendre à réaliser efficacement une application informatique en équipe",
         fields: {
             expectations: ["Créer une application", "Faire évoluer une application", "Maintenir une application"],
-            goal: "Apprendre à réaliser efficacement une application informatique en équipe",
             projects: ["Sudoku en langage C", "Application de gestion d’une salle de spectacle"],
         }
     },
@@ -18,9 +18,9 @@ export const competences: Competence[] = [
         number: 2,
         detail: "Analyser un algorithme et comprendre comment il fonctionne afin de l’améliorer suivant différents critères : temps d’exécution, mémoire...",
         technologies: ["C", "Python"],
+        goal: "Apprendre à optimiser n’importe quel critère d’une application informatique.",
         fields: {
             expectations: ["Améliorer les performances des programmes", "Limiter l’impact environnemental d’une application", "Mettre en place des applications adaptées et efficaces"],
-            goal: "Apprendre à optimiser n’importe quel critère d’une application informatique.",
             projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise un problème mathématiques"],
         }
     },
@@ -29,9 +29,9 @@ export const competences: Competence[] = [
         number: 3,
         detail: "Prendre en main l’architecture UNIX, et se servir des commandes bash, avec la gestion des processus d’un ordinateur et la conteneurisation qui permet d’installer un environnement de travail plus rapidement.",
         technologies: ["Docker", "Bash", "PHP"],
+        goal: "Installer et configurer un poste informatique et de déployer des services dans une architecture réseau.",
         fields: {
             expectations: ["Déployer une architecture technique", "Améliorer une interface existante", "Sécuriser les applications et les services"],
-            goal: "Installer et configurer un poste informatique et de déployer des services dans une architecture réseau.",
             projects: ["Générateur de documentation de code en PDF", "Installation d’un serveur(BDD et pages web)"],
         }
     },
@@ -40,9 +40,9 @@ export const competences: Competence[] = [
         number: 4,
         detail: "Réaliser un diagramme pour modéliser la base, puis la développer avant de l’implanter, la peupler et l’exploiter en faisant des requètes.",
         technologies: ["PostegreSQL", "UML"],
+        goal: "Apprendre à créer et administrer une base de données réaliste.",
         fields: {
             expectations: ["Modéliser et créer une base de données", "Peupler et exploiter une base de données"],
-            goal: "Apprendre à créer et administrer une base de données réaliste.",
             projects: ["Modélisation d’une base de données", "Peuplement et exploitation des données", "Statistiques sur une base de données"],
         }
     },
@@ -51,9 +51,9 @@ export const competences: Competence[] = [
         number: 5,
         detail: "Appréhender les besoins du client et de l’utilisateur, mettre en place des outils de gestion de projet, communiquer efficacement avec les différents acteurs d’un projet.",
         technologies: ["JIRA", "SCRUM", "methodologie agile"],
+        goal: "Gérer et organiser efficacement un projet informatique.",
         fields: {
             expectations: ["Lancer un nouveau projet" ,"Piloter le maintien d’un projet", "Faire évoluer un système d’information"],
-            goal: "Gérer et organiser efficacement un projet informatique.",
             projects: ["Mise en place d'un environnement pour le suivi d'un projet"],
         }
     },
@@ -62,9 +62,9 @@ export const competences: Competence[] = [
         number: 6,
         detail: "Etre capable de s’intégrer efficacement au sein du milieu professionnel.",
         technologies: ["Canva", "GitHub", "Teams"],
+        goal: "Renforcer nos qualités humaines, permet d’intégrer ou d’organiser une équipe informatique saine et efficace.",
         fields: {
             expectations: ["Acquérir et mobiliser les compétences interpersonnelles", "Assurer une veille technologique et informatique", "Apréhender un écosystème numérique"],
-            goal: "Renforcer nos qualités humaines, permet d’intégrer ou d’organiser une équipe informatique saine et efficace.",
             projects: ["Etudes des engagements RSE d’une entreprise", "Réalisation d’un évenement de team building"],
         }
     }

@@ -21,4 +21,8 @@ export const sounds = {
         src: ['./sounds/countdown2.wav'],
         volume: 1
     }),
+    endSuccess: new Howl({
+        src: ['./sounds/success3.mp3'],
+        volume: 0.8
+    }),
 }

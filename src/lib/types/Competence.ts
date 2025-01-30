@@ -4,11 +4,11 @@ export type Competence = {
     name: string,
     detail: string,
     technologies: string[],
+    goal: string,
     fields: CompetenceFields
 }
 
 export type CompetenceFields = {
     expectations: string[],
-    goal: string,
     projects: string[],
 }

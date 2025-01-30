@@ -1,6 +1,6 @@
 
 class GameSettings {
-    flipCooldown = 2500; //1500 de base
+    flipCooldown = 2200; //1500 de base
     flipDuration = 400;
 
     sound = $state(true);
