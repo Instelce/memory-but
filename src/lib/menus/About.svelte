@@ -46,15 +46,15 @@
 				</div>
 
 				<div class="contributor">
-					<img src="/about/.jpg" alt="" />
+					<img src="/about/sasha-faver.jpeg" alt="" />
 					<div>
 						<h3></h3>
 						<div class="flex gap-2">
-							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+							<a href="https://github.com/sashafv" target="_blank" rel="noopener noreferrer"
 								>Github</a
 							>
 							<a
-								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								href="https://www.linkedin.com/in/sasha-faver-5295612a3/"
 								target="_blank"
 								rel="noopener noreferrer">Linkedin</a
 							>
