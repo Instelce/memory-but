@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { CardData } from '$lib/types/CardData';
-	import { randomNumber } from '$lib/utils';
+	import { capitalize, randomNumber } from '$lib/utils';
 	import { revealedCount } from '$lib/stores/revealed.svelte';
 	import { getCompetenceColor } from '../../routes/data_old';
 	import { gameData } from '$lib/stores/gameData.svelte';
@@ -8,6 +8,7 @@
 	import { gameSettings } from '$lib/stores/gameSettings.svelte';
 	import { sounds } from '$lib/audio';
 	import { Confetti } from 'svelte-confetti';
+	import { competences } from '../../routes/data';
 
 	interface Props {
 		data: CardData;
@@ -111,7 +112,10 @@
 			<!-- Card content -->
 			<div class="card-front" transition:flip={{ duration: gameSettings.flipDuration }}>
 				<div class="card-design" style:--color={getCompetenceColor(data.competence)}>
-					<p>{data.content}</p>
+					{#if data.isCompetenceName}
+						<p class="uppercase font-semibold mb-1 text-xs opacity-100" style="color: {getCompetenceColor(data.competence)};">Compétence</p>
+					{/if}
+					<p>{capitalize(data.content)}</p>
 				</div>
 			</div>
 		{:else}
@@ -210,6 +214,7 @@
 			align-items: center;
 			justify-content: center;
 			text-align: center;
+			flex-direction: column;
 		}
 	}
 
@@ -223,6 +228,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			flex-direction: column;
 			border-radius: 10px;
 			border: 1px solid rgb(var(--color-blue));
 			background: rgba(var(--color-blue), 0.1);

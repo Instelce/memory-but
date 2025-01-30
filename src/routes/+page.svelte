@@ -75,7 +75,7 @@
 						// 1. For each competence
 						for (let competence of competences) {
 							// 2. Add a card which contains the name of the competence
-							cards.push({ content: competence.name, competence, revealed: false });
+							cards.push({ isCompetenceName: true, content: competence.name, competence, revealed: false });
 
 							// 3. Add a card which contains a random field of the competence
 							let field: keyof CompetenceFields = Object.keys(competence.fields)[
@@ -86,14 +86,16 @@
 								cards.push({
 									content: competence.fields[field],
 									competence,
-									revealed: false
+									revealed: false,
+									isCompetenceName: false
 								});
 							} else {
 								cards.push({
 									content:
 										competence.fields[field][randomNumber(0, competence.fields[field].length - 1)],
 									competence,
-									revealed: false
+									revealed: false,
+									isCompetenceName: false
 								});
 							}
 						}
@@ -160,8 +162,8 @@
 	<Timer start={true} bind:pause={pauseTimer} show={moreCompetenceInfo == null}></Timer>
 {/if}
 
-<!-- Cards -->
 <div class="w-full h-full flex justify-center items-center overflow-hidden z-10">
+	<!-- More info -->
 	{#if moreCompetenceInfo}
 		<div class="hide-cards">
 			<Button
@@ -218,6 +220,7 @@
 		</div>
 	{/if}
 
+	<!-- Cards -->
 	<div
 		class="card-container w-[70%] h-[90%] grid grid-cols-4 gap-4 z-10"
 		class:slide={!gameData.gameStarted}
@@ -307,7 +310,7 @@
 		flex-direction: column;
 		gap: 1rem;
 
-		z-index: 10;
+		z-index: 22;
 
 		p {
 			white-space: nowrap;

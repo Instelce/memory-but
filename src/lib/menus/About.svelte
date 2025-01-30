@@ -10,13 +10,72 @@
 		<div class="wrapper">
 			<H1>A propos</H1>
 
-			<div class="contributor">
-				<img src="/about/celestin-besson.jpg" alt="Célestin Besson" />
-				<div>
-					<h3>Célestin Besson</h3>
-					<div class="flex gap-2">
-						<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer">Github</a>
-						<a href="https://www.linkedin.com/in/c%C3%A9lestin-besson/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+			<div class="flex flex-col gap-4">
+				<div class="contributor">
+					<img src="/about/.jpg" alt="" />
+					<div>
+						<h3></h3>
+						<div class="flex gap-2">
+							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+								>Github</a
+							>
+							<a
+								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								target="_blank"
+								rel="noopener noreferrer">Linkedin</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="contributor">
+					<img src="/about/.jpg" alt="" />
+					<div>
+						<h3></h3>
+						<div class="flex gap-2">
+							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+								>Github</a
+							>
+							<a
+								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								target="_blank"
+								rel="noopener noreferrer">Linkedin</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="contributor">
+					<img src="/about/.jpg" alt="" />
+					<div>
+						<h3></h3>
+						<div class="flex gap-2">
+							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+								>Github</a
+							>
+							<a
+								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								target="_blank"
+								rel="noopener noreferrer">Linkedin</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="contributor">
+					<img src="/about/celestin-besson.jpg" alt="Célestin Besson" />
+					<div>
+						<h3>Célestin Besson</h3>
+						<div class="flex gap-2">
+							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+								>Github</a
+							>
+							<a
+								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								target="_blank"
+								rel="noopener noreferrer">Linkedin</a
+							>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -78,7 +137,7 @@
 			text-decoration-line: underline;
 			text-decoration-color: rgb(var(--color-blue));
 			text-decoration-line: 4px;
-			text-underline-offset: .25rem;
+			text-underline-offset: 0.25rem;
 		}
 	}
 </style>

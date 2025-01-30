@@ -19,7 +19,7 @@ export const competences: Competence[] = [
         detail: "Analyser un algorithme et comprendre comment il fonctionne afin de l’améliorer suivant différents critères : temps d’exécution, mémoire...",
         technologies: ["C", "Python"],
         fields: {
-            expectations: ["Améliorer les performances des programmes", "limiter l’impact environnemental d’une application", "mettre en place des applications adaptées et efficaces"],
+            expectations: ["Améliorer les performances des programmes", "Limiter l’impact environnemental d’une application", "Mettre en place des applications adaptées et efficaces"],
             goal: "Apprendre à optimiser n’importe quel critère d’une application informatique.",
             projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise le problème du cavalier"],
         }
@@ -28,11 +28,11 @@ export const competences: Competence[] = [
         name: "Administrer un système informatique",
         number: 3,
         detail: "Prendre en main l’architecture UNIX, et se servir des commandes bash, avec la gestion des processus d’un ordinateur et la conteneurisation qui permet d’installer un environnement de travail plus rapidement.",
-        technologies: ["PHP", "Bash", "Docker"],
+        technologies: ["Docker", "Bash", "PHP"],
         fields: {
             expectations: ["Déployer une architecture technique", "Améliorer une interface existante", "Sécuriser les applications et les services"],
             goal: "Installer et configurer un poste informatique et de déployer des servicres dans une architecture réseaue.",
-            projects: ["Générateur de documentation de code sources en pdf.", "Installation d’un serveur avec base de données et pages web."],
+            projects: ["Générateur de documentation de code sources en pdf avec Docker", "Installation d’un serveur avec base de données et pages web."],
         }
     },
     {
@@ -41,7 +41,7 @@ export const competences: Competence[] = [
         detail: "Réaliser un diagramme pour modéliser la base, puis la développer avant de l’implanter, la peupler et l’exploiter en faisant des requètes.",
         technologies: ["PostegreSQL", "UML"],
         fields: {
-            expectations: ["Modéliser et créer une base de données", "peupler et exploiter une base de données"],
+            expectations: ["Modéliser et créer une base de données", "Peupler et exploiter une base de données"],
             goal: "Apprendre à créer et administrer une base de données réaliste.",
             projects: ["Modélisation et implantation d’une base de données", "Peuplement et exploitation des données avec des statistiques"],
         }
