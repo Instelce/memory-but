@@ -29,15 +29,15 @@
 				</div>
 
 				<div class="contributor">
-					<img src="/about/.jpg" alt="" />
+					<img src="/about/stephane-antoine.jpg" alt="" />
 					<div>
-						<h3></h3>
+						<h3>Stéphane Antoine</h3>
 						<div class="flex gap-2">
-							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+							<a href="https://github.com/stephantoine" target="_blank" rel="noopener noreferrer"
 								>Github</a
 							>
 							<a
-								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								href="https://www.linkedin.com/in/stephane-antoine-etudiant-iutlan/"
 								target="_blank"
 								rel="noopener noreferrer">Linkedin</a
 							>
@@ -48,7 +48,7 @@
 				<div class="contributor">
 					<img src="/about/sasha-faver.jpeg" alt="" />
 					<div>
-						<h3></h3>
+						<h3>Sasha Faver</h3>
 						<div class="flex gap-2">
 							<a href="https://github.com/sashafv" target="_blank" rel="noopener noreferrer"
 								>Github</a
