@@ -12,15 +12,15 @@
 
 			<div class="flex flex-col gap-4">
 				<div class="contributor">
-					<img src="/about/.jpg" alt="" />
+					<img src="/about/valentin-conchis.jpg" alt="" />
 					<div>
-						<h3></h3>
+						<h3>Valentin Conchis</h3>
 						<div class="flex gap-2">
-							<a href="https://github.com/Instelce" target="_blank" rel="noopener noreferrer"
+							<a href="https://github.com/valentinConchis" target="_blank" rel="noopener noreferrer"
 								>Github</a
 							>
 							<a
-								href="https://www.linkedin.com/in/c%C3%A9lestin-besson/"
+								href="https://www.linkedin.com"
 								target="_blank"
 								rel="noopener noreferrer">Linkedin</a
 							>
