@@ -8,7 +8,7 @@ export const competences: Competence[] = [
         detail: "Réaliser et implémenter des conceptions simples et efficaces qui respectent les principes d’accessibilité et d’ergonomie et les tester pour valider leur qualité.",
         technologies: ["C", "CSS", "HTML", "Java", "JavaScript", "PHP"],
         fields: {
-            expectations: ["Créer une application", "faire évoluer une application", "maintenir une application"],
+            expectations: ["Créer une application", "Faire évoluer une application", "Maintenir une application"],
             goal: "Apprendre à réaliser efficacement une application informatique en équipe",
             projects: ["Sudoku en langage C", "Application de gestion d’une salle de spectacle"],
         }
@@ -19,20 +19,20 @@ export const competences: Competence[] = [
         detail: "Analyser un algorithme et comprendre comment il fonctionne afin de l’améliorer suivant différents critères : temps d’exécution, mémoire...",
         technologies: ["C", "Python"],
         fields: {
-            expectations: ["Améliorer les performances des programmes", "limiter l’impact environnemental d’une application", "mettre en place des applications adaptées et efficaces"],
+            expectations: ["Améliorer les performances des programmes", "Limiter l’impact environnemental d’une application", "Mettre en place des applications adaptées et efficaces"],
             goal: "Apprendre à optimiser n’importe quel critère d’une application informatique.",
-            projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise le problème du cavalier"],
+            projects: ["Algorithme de résolution de sudoku", "Algorithme qui modélise un problème mathématiques"],
         }
     },
     {
         name: "Administrer un système informatique",
         number: 3,
         detail: "Prendre en main l’architecture UNIX, et se servir des commandes bash, avec la gestion des processus d’un ordinateur et la conteneurisation qui permet d’installer un environnement de travail plus rapidement.",
-        technologies: ["PHP", "Bash", "Docker"],
+        technologies: ["Docker", "Bash", "PHP"],
         fields: {
             expectations: ["Déployer une architecture technique", "Améliorer une interface existante", "Sécuriser les applications et les services"],
-            goal: "Installer et configurer un poste informatique et de déployer des servicres dans une architecture réseaue.",
-            projects: ["Générateur de documentation de code sources en pdf.", "Installation d’un serveur avec base de données et pages web."],
+            goal: "Installer et configurer un poste informatique et de déployer des services dans une architecture réseau.",
+            projects: ["Générateur de documentation de code en PDF", "Installation d’un serveur(BDD et pages web)"],
         }
     },
     {
@@ -41,20 +41,20 @@ export const competences: Competence[] = [
         detail: "Réaliser un diagramme pour modéliser la base, puis la développer avant de l’implanter, la peupler et l’exploiter en faisant des requètes.",
         technologies: ["PostegreSQL", "UML"],
         fields: {
-            expectations: ["Modéliser et créer une base de données", "peupler et exploiter une base de données"],
+            expectations: ["Modéliser et créer une base de données", "Peupler et exploiter une base de données"],
             goal: "Apprendre à créer et administrer une base de données réaliste.",
-            projects: ["Modélisation et implantation d’une base de données", "Peuplement et exploitation des données avec des statistiques"],
+            projects: ["Modélisation d’une base de données", "Peuplement et exploitation des données", "Statistiques sur une base de données"],
         }
     },
     {
         name: "Conduire un projet",
         number: 5,
         detail: "Appréhender les besoins du client et de l’utilisateur, mettre en place des outils de gestion de projet, communiquer efficacement avec les différents acteurs d’un projet.",
-        technologies: ["CSS", "HTML", "JavaScript"],
+        technologies: ["JIRA", "SCRUM", "methodologie agile"],
         fields: {
             expectations: ["Lancer un nouveau projet" ,"Piloter le maintien d’un projet", "Faire évoluer un système d’information"],
             goal: "Gérer et organiser efficacement un projet informatique.",
-            projects: ["Site internet de streaming en HTML/CSS"],
+            projects: ["Mise en place d'un environnement pour le suivi d'un projet"],
         }
     },
     {
@@ -88,6 +88,6 @@ export function getCompetenceColor(competence: Competence) {
     }
 }
 
-export function getCompetence(number: 1 | 2 | 3 | 4 | 5 | 6): Competence {
+export function getCompetence(number: number): Competence {
     return competences.find(competence => competence.number === number) as Competence;
 }

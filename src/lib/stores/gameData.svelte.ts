@@ -21,6 +21,8 @@ class GameData {
 
         return founded;
     }
+
+    
 }
 
 export const gameData = new GameData();
